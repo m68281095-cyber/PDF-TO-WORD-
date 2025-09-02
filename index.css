@@ -1,0 +1,195 @@
+/* Basic Reset & Font */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f5f5;
+  --text-color: #333;
+  --border-color: #ddd;
+  --error-color: #d9534f;
+  --success-color: #5cb85c;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main App Container */
+#root {
+  width: 100%;
+  max-width: 800px;
+}
+
+.app-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header */
+header h1 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+header p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* File Upload Area */
+.upload-area {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.upload-area:hover, .upload-area.drag-over {
+  border-color: var(--primary-color);
+  background-color: #f9f9f9;
+}
+
+.upload-area p {
+  margin: 0;
+  font-size: 1rem;
+  color: #888;
+}
+
+.upload-area strong {
+  color: var(--primary-color);
+}
+
+#file-input {
+  display: none;
+}
+
+/* File Info */
+.file-info {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #555;
+  background-color: #e9f2fe;
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0 0.5rem;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background-color: #a0c3e8;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: var(--success-color);
+}
+.btn-secondary:hover:not(:disabled) {
+    background-color: #4a9d4a;
+}
+
+/* Loading Spinner */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Result Preview */
+.result-preview {
+  margin-top: 2rem;
+  text-align: left;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #fafafa;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.result-preview h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color);
+  background-color: #fdd;
+  border: 1px solid var(--error-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  .app-container {
+    padding: 1rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+      font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+}
